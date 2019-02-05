@@ -17,6 +17,16 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-pass-strength": [
+        "dist/ngx-pass-strength",
+        "dist/ngx-pass-strength"
+      ],
+      "ngx-pass-strength/*": [
+        "dist/ngx-pass-strength/*",
+        "dist/ngx-pass-strength/*"
+      ]
+    }
   }
 }

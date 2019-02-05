@@ -1,0 +1,29 @@
+.ngx-password-strength-container {
+    font-family: Luca, sans-serif;
+  }
+  .ngx-password-strength-container .ngx-strength-bar {
+    list-style:none;
+    margin:0;
+    margin-top: 10px;
+    padding:0;
+    vertical-align:2px;
+    width: 100%;
+  }
+  
+  .ngx-strength-bar .point {
+    background:#DDD;
+    display:inline-block;
+    transition: background-color 1000ms linear;
+    height:15px;
+    width: 18%;
+  }
+  
+  .ngx-strength-bar .point:first-of-type {
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+  }
+  
+  .ngx-strength-bar .point:last-of-type {
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+  }
