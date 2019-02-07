@@ -1,6 +1,25 @@
 {
   "name": "ngx-pass-strength",
-  "version": "0.0.2",
+  "version": "0.0.4",
+  "description": "This is a small Angular Library which checks your password strength and also whether it's breached or not.",
+  "keywords": [
+    "angular",
+    "library",
+    "password",
+    "strength",
+    "HIBP"
+  ],
+  "author": {
+    "name": "Yaser Adel Mehraban",
+    "email": "yaser@mehraban.com.au",
+    "url": "https://mehraban.com.au"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/yashints/ngx-pass-strength#readme",
+  "bugs": { 
+    "url" : "https://github.com/yashints/ngx-pass-strength/issues",
+    "email" : "adel.mehrban@gmail.com"
+  },
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0",

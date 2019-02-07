@@ -6,14 +6,11 @@ cache:
   directories:
     - ./node_modules
 
-addons:
-  chrome: stable
-
 install:
   - npm install
 
 script: 
-  - npm run test --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
+  - npm run test --watch=false --no-progress
   - npm run e2e
   - npm run package
 
