@@ -1,30 +1,23 @@
 language: node_js
 node_js:
-  - '8'
-
+- '8'
 addons:
   chrome: stable
-
 install:
-  - npm install
-
+- npm install
 cache:
   directories:
-    - ./node_modules
-
-script: 
-  - ng test --watch false --browsers ChromeHeadless
-  - npm run package
-
+  - "./node_modules"
+script:
+- ng test --watch false --browsers ChromeHeadless
+- npm run package
 before_deploy:
-  - cp README.md dist/ngx-pass-strength
-  - cd dist/ngx-pass-strength
-
+- cp README.md dist/ngx-pass-strength
+- cd dist/ngx-pass-strength
 deploy:
   provider: npm
   email: adel.mehrban@gmail.com
   api_key:
-    secure: oHBdrky9kJfZP7U/MJR2W8tLKTjw1ZHyHlLwV77h2iRgT/k8TDBaC9DbzW5jpvquJOpykqxzfffWMEefjAbAyuKNB4+1lBaYYnneCk3W6v9qCuQwn4AYM46H43QO5e0+UKkshvlD2JoLgfmdd3jplvGUMKkA+4yWBmXmk+uYMSz9sECqqZETvBuEkfdRVQhWWJ7RdDNEtMAInO1LAESEzS2V3ARra8Y34NzXtJb/kdHUST2pHYruTILa2F0mXiF4vXIFyX7PD+iVsjohjM3XNlbsdOfKpzCVC8TGw0z82AwTAFCPKsK6rdeRLlTgL7c2NlT5OaASABrFnzKKzEuRdRuvsjN8YXtfopz6o10/mcDWUl3IIbOMVxnY3A8iSouch1Idu3B44xND3KxJ69CwyJQgHs+RhAV0WaT9hO1y5xGiVnczChgXazx43BlblkI2fH/tvHSVDv/Klp3ZZvp/Mags6EGgkXDhQonyAkQw7746K1H7GlPy4IVgYYXgGYFvriil1hgYaAHhQ5NElk1uvqENRnVh9ScSDsn2LsH8HTnT/UYGUG2qh4sJman6jVFNX+7htyGhBj2dH1U5TkyHtksy9e+Lwl6UlYggig4Js7UE/H6mWrgqeDkhBpavFVvg+NVUQY7y0HpntsWSF7E1vy+/5borGxGlKTUK0a87bAU=
-  skip_cleanup: true
+    secure: yNhmru+wjAbd03mDM8KdMHS5/GAvcA4Ky/hVH0jemz8OVb8wdDRtldmjHuyZ2/U2nz4dYp8QtjD3Gf8VEax3rezSlxnVxnfTi2GXj+lHC3TzU5q1ncYXDFME7LoK6iiWKG7H0EHJgIu/tSl/JppKqcz+7rRyZwQwUOzUi8Q698lVQky9hcpGUR2ebLK/ugaC+VUNdT30SvqSDuVtLHrUmde8QxIECilWoRLJCYeFp/j7wUaNcLDKxzJlPfvdNmhoms6vRtC7gDpvyuvbm8fN7Te9IBCYSF/fOHHZ5ac+0RgtfwQScArzBfaSsgfdKTnEiFzQpXZLPJNe8roxBl/ihwRXHfuvieXpwVxBQR/rD2qgIpLWdqzoS1r2lH2Hoqv8+UfivRakf0H/jtY80M5o5NnFMzO68GUlDGVO7m5BeSBblNJ3tVxkeG/2VEK0WJ+uixFurmGHeaIOR0covf2TxIUJNa1W1NNx23UQtO0uo8RDTC3mPzQhy2fhXtjfvvbLYOT9QBhgtEAztLlE1FoIgtrNu2rXEyr6E/6zbMrK/MxGvxUepq/Jx1xf2qiecHlooFjUAe/FwW/3ZXeEGLU0nkZfTEoV1VjPtKgz/AgdEzS/x4O1GEB4vmxeaM4STaUgfADb+wOz7IhE8zP0fggziS6KKSdz463IHmNlWKdPDiI=
   on:
-    branch: master
+    repo: yashints/ngx-pass-strength
