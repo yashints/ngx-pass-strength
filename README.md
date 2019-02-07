@@ -1,6 +1,6 @@
 # NGX Pass Strength
 
-[![Build Status](https://travis-ci.com/yashints/ngx-pass-strength.svg?branch=master)]
+![Build Status](https://travis-ci.com/yashints/ngx-pass-strength.svg?branch=master)
 [![npm](https://img.shields.io/npm/l/express.svg?maxAge=2592000)](/LICENSE)
 
 [![npm](https://img.shields.io/badge/stackblitz-online-orange.svg)](https://stackblitz.com/edit/ngx-pass-strength-sample)
