@@ -16,6 +16,12 @@ Try out [the demo on Stackblitz!](https://stackblitz.com/edit/ngx-pass-strength-
 npm i ngx-pass-strength --save
 ```
 
+Since `npm` doesn't install the peer dependencies automatically, you will need to install `sha1` npm package which is needed to calculate the password hash:
+
+```bash
+npm i sha1 --save
+```
+
 ## Setup
 You will need to import `NgxPassStrengthModule` into your application module. Then use `<ngx-pass-strength>` component for your password field.
 
