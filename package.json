@@ -1,14 +1,14 @@
 {
   "name": "angular-libs",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build password-strength",
+    "build": "ng build ngx-pass-strength",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "pack": "cd dist/password-strength && npm pack",
+    "pack": "cd dist/ngx-pass-strength && npm pack",
     "package": "npm run build && npm run pack"
   },
   "private": true,

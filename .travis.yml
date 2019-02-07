@@ -1,0 +1,30 @@
+language: node_js
+node_js:
+  - '8'
+
+cache:
+  directories:
+    - ./node_modules
+
+addons:
+  chrome: stable
+
+install:
+  - npm install
+
+script: 
+  - npm run test --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
+  - npm run e2e
+  - npm run package
+
+before_deploy:
+  - cd dist/ngx-pass-strength
+
+deploy:
+  provider: npm
+  email: adel.mehrban@gmail.com
+  api_key:
+    secure: oHBdrky9kJfZP7U/MJR2W8tLKTjw1ZHyHlLwV77h2iRgT/k8TDBaC9DbzW5jpvquJOpykqxzfffWMEefjAbAyuKNB4+1lBaYYnneCk3W6v9qCuQwn4AYM46H43QO5e0+UKkshvlD2JoLgfmdd3jplvGUMKkA+4yWBmXmk+uYMSz9sECqqZETvBuEkfdRVQhWWJ7RdDNEtMAInO1LAESEzS2V3ARra8Y34NzXtJb/kdHUST2pHYruTILa2F0mXiF4vXIFyX7PD+iVsjohjM3XNlbsdOfKpzCVC8TGw0z82AwTAFCPKsK6rdeRLlTgL7c2NlT5OaASABrFnzKKzEuRdRuvsjN8YXtfopz6o10/mcDWUl3IIbOMVxnY3A8iSouch1Idu3B44xND3KxJ69CwyJQgHs+RhAV0WaT9hO1y5xGiVnczChgXazx43BlblkI2fH/tvHSVDv/Klp3ZZvp/Mags6EGgkXDhQonyAkQw7746K1H7GlPy4IVgYYXgGYFvriil1hgYaAHhQ5NElk1uvqENRnVh9ScSDsn2LsH8HTnT/UYGUG2qh4sJman6jVFNX+7htyGhBj2dH1U5TkyHtksy9e+Lwl6UlYggig4Js7UE/H6mWrgqeDkhBpavFVvg+NVUQY7y0HpntsWSF7E1vy+/5borGxGlKTUK0a87bAU=
+  skip_cleanup: true
+  on:
+    branch: master

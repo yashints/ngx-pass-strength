@@ -4,6 +4,8 @@ import { NgxPassStrengthService } from './ngx-pass-strength.service';
 
 describe('NgxPassStrengthService', () => {
   let injector : TestBed;
+  let service: NgxPassStrengthService;
+  let httpMock: HttpTestingController;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -16,30 +18,37 @@ describe('NgxPassStrengthService', () => {
     });
 
     injector = getTestBed();
+    service = injector.get(NgxPassStrengthService);
+    httpMock = injector.get(HttpTestingController);
 
+  });
+
+  afterEach(() => {
+    httpMock.verify();
   });
 
   it('should be created', () => {
-    const service = injector.get(NgxPassStrengthService);
     expect(service).toBeTruthy();
   });
 
-  // describe('#range', () => {
-  //   it('should return an Observable<string>', () => {
-  //     const hash = 'AC3DC';
-  //     const dummyHashes = `[
-  //       { login: 'John' },
-  //       { login: 'Doe' }
-  //     ]`;
+  describe('#range', () => {
+    it('should return an Observable<string>', () => {
+      const hash = 'AC3DC';
+      const dummyHashes = [
+        { login : "John "},
+        { login : "Doe"}
+      ];
   
-  //     service.range(hash).subscribe(data => {
-  //       expect(data.length).toBe(2);
-  //       expect(data).toEqual(dummyHashes);
-  //     });
+      service.range(hash)      
+      .subscribe(data => {
+        const dataObject = JSON.parse(data);
+        expect(dataObject.length).toBe(2);
+        expect(dataObject).toEqual(dummyHashes);
+      });
   
-  //     const req = httpMock.expectOne(`${service.pwnedPasswordsApiUrl}/${service.RANGE_URL}/${hash}`);
-  //     expect(req.request.method).toBe("GET");
-  //     req.flush(dummyHashes);
-  //   });
-  // });
+      const req = httpMock.expectOne(`${service.pwnedPasswordsApiUrl}/${service.RANGE_URL}/${hash}`);
+      expect(req.request.method).toBe("GET");
+      req.flush(JSON.stringify(dummyHashes));
+    });
+  });
 });

@@ -6,7 +6,7 @@ import { RangeResponse } from './models';
 import { NgxPassStrengthService } from './ngx-pass-strength.service';
 
 @Component({
-  selector: 'lib-ngx-pass-strength',
+  selector: 'ngx-pass-strength',
   templateUrl: './ngx-pass-strength.html',
   styleUrls: ['./ngx-pass-strength.scss']
 })
@@ -51,7 +51,8 @@ export class NgxPassStrengthComponent implements OnChanges {
   }
 
   ngOnChanges(changes: { [propName: string]: SimpleChange }): void {
-    if (changes['passwordToCheck'].currentValue === changes['passwordToCheck'].previousValue) {
+    if (changes['passwordToCheck'].currentValue === changes['passwordToCheck'].previousValue
+      || !changes['passwordToCheck'].currentValue) {
       return;
     }
 
