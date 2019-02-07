@@ -1,6 +1,6 @@
 {
   "name": "ngx-pass-strength",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "This is a small Angular Library which checks your password strength and also whether it's breached or not.",
   "keywords": [
     "angular",
