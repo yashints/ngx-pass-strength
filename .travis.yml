@@ -12,7 +12,6 @@ script:
 - ng test --watch false --browsers ChromeHeadless
 - npm run package
 before_deploy:
-- cp README.md dist/ngx-pass-strength
 - cd dist/ngx-pass-strength
 deploy:
   provider: npm
