@@ -7,15 +7,4 @@
     <li class="point" [style.background-color]="bar3"></li>
     <li class="point" [style.background-color]="bar4"></li>
   </ul>
-  <div [hidden]="!passwordIsPawned">
-    Oh no, seems like your password is been found in
-    <strong>{{ numberOfBreaches | number }}</strong> breaches!
-
-    <div>
-      <small>
-        Credits to
-        <a href="https://haveibeenpwned.com">Have I Been Pwned APIs.</a>
-      </small>
-    </div>
-  </div>
 </div>
